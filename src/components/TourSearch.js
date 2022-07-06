@@ -1,6 +1,8 @@
 const TourSearch = () => {
     return (
-        <></>
+        <>
+        <h1>heyyyyyyy</h1>
+        </>
     )
 }
 
