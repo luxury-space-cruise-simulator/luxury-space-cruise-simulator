@@ -5,6 +5,7 @@ const TourSearch = (props) => {
 
     const [tourDropdown, setTourDropdown] = useState('');
     const [tourSubmit, setTourSubmit] = useState('');
+    // const [count, setCount] = useState(0);
     
 
     const handleChange = (e) => {
@@ -15,6 +16,18 @@ const TourSearch = (props) => {
         e.preventDefault();
         setTourSubmit(chosenTour);
     }
+
+    // const alerted = () => {
+    //     if (count >= 3){
+    //         alert("no more tours for you!");
+    //     }
+    // }
+
+    // const increaseCount = () => {
+    //     setCount(count + 1);
+    //     alerted();
+    // } 
+
 
     useEffect( () => {
 
@@ -64,6 +77,7 @@ const TourSearch = (props) => {
                         <option value="perseverance">Jezero Crater</option>
                         <option value="opportunity">Meridian Planum</option>
                     </select>
+                    {/* <button onClick={increaseCount} className="button">Take Me on a Virtual Tour</button> */}
                     <button className="button">Take Me on a Virtual Tour</button>
                 </form>
         </>

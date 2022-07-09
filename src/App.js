@@ -4,11 +4,13 @@ import Header from "./components/Header";
 import TourSearch from "./components/TourSearch";
 import DisplayData from "./components/DisplayData";
 import Footer from "./components/Footer";
+// import TestCount from "./components/TestCount"
 import './App.css';
 
 function App() {
 
 const [tourLocation, setTourLocation] = useState ([]);
+// const [buttonCount, setButtonCount] = useState(0);
 
   return (
     <div className="App">
@@ -19,6 +21,7 @@ const [tourLocation, setTourLocation] = useState ([]);
       <DisplayData
       tourLocation={tourLocation}
       />
+      {/* <TestCount/> */}
       <Footer />
     </div>
   );
