@@ -5,6 +5,7 @@ const TourSearch = (props) => {
 
     const [tourDropdown, setTourDropdown] = useState('');
     const [tourSubmit, setTourSubmit] = useState('');
+    const [count, setCount] = useState(3);
 
 
     const [currentDate, setCurrentDate] = useState('');
@@ -97,14 +98,14 @@ const TourSearch = (props) => {
             });
         } if (tourDropdown === "perseverance") {
             axios({
-                baseURL: `${baseURL}/perseverance/photos?api_key=${key}&sol=100&camera=mcz_left`,
+                baseURL: `${baseURL}/perseverance/photos?api_key=${key}&sol=23&camera=mcz_left`,
             }).then((perseveranceImageData) => {
                 //   console.log(perseveranceImageData.data);
                 props.setTourLocation(perseveranceImageData.data.photos)
             });
         } if (tourDropdown === "opportunity") {
             axios({
-                baseURL: `${baseURL}/opportunity/photos?api_key=${key}&sol=744&camera=pancam`,
+                baseURL: `${baseURL}/opportunity/photos?api_key=${key}&sol=98&camera=pancam`,
             }).then((opportunityImageData) => {
                 //   console.log(opportunityImageData.data);
                 props.setTourLocation(opportunityImageData.data.photos)
@@ -112,6 +113,11 @@ const TourSearch = (props) => {
         }
 
     }, [tourSubmit]);
+
+
+    const decreaseCount = () => {
+        setCount(count - 1);
+    }
 
     return (
         <>
@@ -125,10 +131,26 @@ const TourSearch = (props) => {
                     <option value="perseverance">Jezero Crater</option>
                     <option value="opportunity">Meridian Planum</option>
                 </select>
-                <button className="button">Take Me on a Virtual Tour</button>
+                {
+                    (count >= 1)
+                        ?
+                        <button onClick={decreaseCount} className="button">Take Me on a Virtual Tour</button>
+                        :
+                        <button onClick={decreaseCount} disabled = {true}className="button">No more tours for you! 😭</button>
+
+                }
+                <div className="countP">
+                    <p>
+                        {`You have ${count} virtual tours left
+for today!`}
+                    </p>
+                </div>
+
             </form>
         </>
     )
 }
 
 export default TourSearch;
+
+

@@ -3,6 +3,7 @@ import {useState} from 'react';
 import Header from "./components/Header";
 import TourSearch from "./components/TourSearch";
 import DisplayData from "./components/DisplayData";
+import CarouselComponent from "./components/CarouselComponent";
 import Footer from "./components/Footer";
 import './App.css';
 
@@ -19,6 +20,9 @@ function App() {
       setTourLocation={setTourLocation}
       setDates={setDates}
       setButtonClick={setButtonClick}
+      />
+      <CarouselComponent
+      tourLocation={tourLocation}
       />
       <DisplayData
       tourLocation={tourLocation}

@@ -22,3 +22,27 @@ html { box-sizing: border-box;}
 html {
   font-size: 125%;
 }
+
+img {
+  height: 100%;
+  width: 100%;
+
+}
+
+.imgContainer {
+  width: 100vw;
+  max-height: 75vh;
+  margin: 0;
+}
+
+.carouselSize {
+  width: 70vw;
+  margin: 100px auto;
+}
+
+/* .imagesFlex {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+
