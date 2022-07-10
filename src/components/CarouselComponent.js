@@ -2,10 +2,9 @@ import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const CarouselComponent = (props) => {
-
     return (
         <div className="carouselSize">
-        <Carousel centerMode={true} infiniteLoop={true} autoPlay={true} showStatus={false} showIndicators={false}>
+        <Carousel centerMode={true} infiniteLoop={true} autoPlay={true} showStatus={false} showIndicators={false} showThumbs={false}>
                 {
                     props.tourLocation.map((photo) => {
                         return (
