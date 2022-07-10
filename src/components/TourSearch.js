@@ -84,30 +84,31 @@ const TourSearch = (props) => {
 
         if (tourDropdown === "curiosity") {
             axios({
-                baseURL: `${baseURL}/curiosity/photos?api_key=${key}&sol=200&camera=mast`,
+                baseURL: `${baseURL}/curiosity/photos?api_key=${key}&sol=3397&camera=mast`,
             }).then((curiosityImageData) => {
                 //   console.log(curiosityImageData.data.photos);
                 props.setTourLocation(curiosityImageData.data.photos)
             });
         } if (tourDropdown === "spirit") {
             axios({
-                baseURL: `${baseURL}/spirit/photos?api_key=${key}&sol=300&camera=pancam`,
+                baseURL: `${baseURL}/spirit/photos?api_key=${key}&sol=1277&camera=navcam`,
+                // pancam *alternate camera*
             }).then((spiritImageData) => {
                 //   console.log(spiritImageData.data);
                 props.setTourLocation(spiritImageData.data.photos)
             });
         } if (tourDropdown === "perseverance") {
             axios({
-                baseURL: `${baseURL}/perseverance/photos?api_key=${key}&sol=23&camera=mcz_left`,
+                baseURL: `${baseURL}/perseverance/photos?api_key=${key}&sol=489&camera=mcz_right`,
             }).then((perseveranceImageData) => {
                 //   console.log(perseveranceImageData.data);
                 props.setTourLocation(perseveranceImageData.data.photos)
             });
         } if (tourDropdown === "opportunity") {
             axios({
-                baseURL: `${baseURL}/opportunity/photos?api_key=${key}&sol=98&camera=pancam`,
+                baseURL: `${baseURL}/opportunity/photos?api_key=${key}&sol=4557&camera=navcam`,
             }).then((opportunityImageData) => {
-                //   console.log(opportunityImageData.data);
+                  console.log(opportunityImageData.data);
                 props.setTourLocation(opportunityImageData.data.photos)
             });
         }
