@@ -33,7 +33,7 @@ const TourSearch = (props) => {
         params: {
             start_date: currentDate,
             end_date: '',
-            api_key: "tBCizUWmUhJN2EPpuPR9cx0fWw9VEpXv9nQIEN0U"
+            api_key: "",
         }
     })
         .then((res) => {
@@ -75,7 +75,6 @@ const TourSearch = (props) => {
             console.log('Oh no!! Insert content to page here');
         })
     }, [currentDate]);
-
 
     // const alerted = () => {
     //     if (count >= 3){
