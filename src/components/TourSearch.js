@@ -6,12 +6,11 @@ const TourSearch = (props) => {
    
     const [tourSubmit, setTourSubmit] = useState('');
     const [count, setCount] = useState(3);
-
-
     const [currentDate, setCurrentDate] = useState('');
 
     const handleChange = (e) => {
         props.setTourDropdown(e.target.value);
+        props.setButtonClick(false);
     }
 
     const handleSubmit = function (e, chosenTour) {
@@ -28,17 +27,18 @@ const TourSearch = (props) => {
 
     // calling asteroid API
     useEffect(() => {
+        if(props.buttonClick) {
+        
         axios({
             url: "https://api.nasa.gov/neo/rest/v1/feed?",
             params: {
                 start_date: currentDate,
                 end_date: '',
-                api_key: "DEMO_KEY",
+                api_key: "hKcY4WWX2aEd0l04NWidPJgar7mrh32uIHhf9wgl",
             }
         })
             .then((res) => {
                 // console.log(res.data.near_earth_objects)
-
                 const datesObject = res.data.near_earth_objects
                 for (const [asteroidDate, dateEntries] of Object.entries(datesObject)) {
 
@@ -70,17 +70,19 @@ const TourSearch = (props) => {
                 datesArray.sort();
 
                 props.setDates(datesArray);
+                // props.setAnyDatesAvailable(true);
             })
             .catch(err => {
-                console.log('Oh no!! Insert content to page here');
+                props.setAnyDatesAvailable(false);
             })
+        }
     }, [currentDate]);
 
 
     useEffect(() => {
 
         const baseURL = `https://api.nasa.gov/mars-photos/api/v1/rovers`
-        const key = `IX9fyGha33cKkGYIMNautItzjvO27KBdETb1U6r1`
+        const key = `IX9fyGha33cKkGYIMNautItzjvO27KBdETb1U6r1` 
 
         if (props.tourDropdown === "curiosity") {
             axios({

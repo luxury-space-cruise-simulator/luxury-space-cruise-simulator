@@ -14,6 +14,7 @@ function App() {
   const [tourLocation, setTourLocation] = useState ([]);
   const [buttonClick, setButtonClick] = useState(false);
   const [dates, setDates] = useState([]);
+  const [anyDatesAvailable, setAnyDatesAvailable] = useState(true);
 
 
   return (
@@ -23,21 +24,32 @@ function App() {
       setTourLocation={setTourLocation}
       setDates={setDates}
       setButtonClick={setButtonClick}
+      buttonClick={buttonClick}
       tourDropdown={tourDropdown}
       setTourDropdown={setTourDropdown}
+      setAnyDatesAvailable={setAnyDatesAvailable}
       />
       <DetailsComponent
       tourDropdown={tourDropdown}
       setTourDropdown={setTourDropdown}
       buttonClick={buttonClick}
       />
-      <CarouselComponent
-      tourLocation={tourLocation}
-      />
+      
+      {buttonClick 
+        ?
+        <CarouselComponent
+        tourLocation={tourLocation}
+        />
+        : 
+        null
+      }
       <DisplayData
       tourLocation={tourLocation}
       safeDates={dates}
       buttonClick={buttonClick}
+      anyDatesAvailable={anyDatesAvailable}
+      tourDropdown={tourDropdown}
+      setButtonClick={setButtonClick}
       />
       <Footer />
     </div>
