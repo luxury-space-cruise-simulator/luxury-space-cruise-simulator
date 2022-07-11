@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import LoadingSpinner from './LoadingSpinner';
 
 const TourSearch = (props) => {
 
@@ -7,6 +8,7 @@ const TourSearch = (props) => {
     const [tourSubmit, setTourSubmit] = useState('');
     const [count, setCount] = useState(3);
     const [currentDate, setCurrentDate] = useState('');
+    
 
     const handleChange = (e) => {
         props.setTourDropdown(e.target.value);
@@ -28,6 +30,8 @@ const TourSearch = (props) => {
     // calling asteroid API
     useEffect(() => {
         if(props.buttonClick) {
+        // put a truthy value on a loading function
+        props.setIsLoading(true);
         
         axios({
             url: "https://api.nasa.gov/neo/rest/v1/feed?",
@@ -70,10 +74,11 @@ const TourSearch = (props) => {
                 datesArray.sort();
 
                 props.setDates(datesArray);
-                // props.setAnyDatesAvailable(true);
+                props.setIsLoading(false);
             })
             .catch(err => {
                 props.setAnyDatesAvailable(false);
+                props.setIsLoading(false);
             })
         }
     }, [currentDate]);

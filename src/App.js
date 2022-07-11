@@ -7,6 +7,7 @@ import DisplayData from "./components/DisplayData";
 import CarouselComponent from "./components/CarouselComponent";
 import Footer from "./components/Footer";
 import './App.css';
+import LoadingSpinner from './components/LoadingSpinner';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
   const [buttonClick, setButtonClick] = useState(false);
   const [dates, setDates] = useState([]);
   const [anyDatesAvailable, setAnyDatesAvailable] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
 
   return (
@@ -28,7 +30,13 @@ function App() {
       tourDropdown={tourDropdown}
       setTourDropdown={setTourDropdown}
       setAnyDatesAvailable={setAnyDatesAvailable}
+      setIsLoading={setIsLoading}
       />
+      {
+        isLoading
+          ? <LoadingSpinner />
+          : null
+      }
       <DetailsComponent
       tourDropdown={tourDropdown}
       setTourDropdown={setTourDropdown}
