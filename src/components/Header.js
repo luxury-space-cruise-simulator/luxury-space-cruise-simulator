@@ -1,8 +1,17 @@
 const Header = () => {
     return (
-        <h1>Yeeting Billionaires into Space</h1>
+        <header>
+            <h1>Yeeting Billionaires into Space</h1>
+            <h2>Mars Edition</h2>
 
-        // {console.log("Header has rendered")}
+            <p>
+                Visit Earth's neighbouring red planet and discover ancient organisms, understand the evolution of the planet, and experience marsquakes in real time! Don't miss out on our luxury ships and on-site destinations, equipped with a full day spa, fine dining, and more!
+            </p>
+            <a href="#search">Book A Trip</a>
+
+
+        </header>
+        
     );
 }
 
