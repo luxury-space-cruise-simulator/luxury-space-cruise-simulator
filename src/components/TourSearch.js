@@ -24,6 +24,8 @@ const TourSearch = (props) => {
         const todaysDate = `${userDate.getFullYear()}-${userDate.getMonth() + 1}-${userDate.getDate()}`;
         setCurrentDate(todaysDate);
         props.setButtonClick(true);
+
+        decreaseCount();
     }
 
 
@@ -119,7 +121,7 @@ const TourSearch = (props) => {
             });
         } if (props.tourDropdown === "opportunity") {
             axios({
-                baseURL: `${baseURL}/opportunity/phoos?api_key=${key}&sol=4557&camera=navcam`,
+                baseURL: `${baseURL}/opportunity/photos?api_key=${key}&sol=4557&camera=navcam`,
             }).then((opportunityImageData) => {
                   console.log(opportunityImageData.data);
                 props.setTourLocation(opportunityImageData.data.photos)
@@ -151,11 +153,11 @@ const TourSearch = (props) => {
                 {
                     (count > 0)
                         ?
-                        <button onClick={decreaseCount} className="button">Take Me on a Virtual Tour</button>
+                        <button className="button">Take Me on a Virtual Tour</button>
                         :
-                        <button onClick={decreaseCount} disabled = {true}className="button">No more tours for you! 😭</button>
-
+                        <button disabled = {true}className="button">You Have Run Out of Tours for Today</button>
                 }
+                    
                 <div className="countP">
                     <p>
                         {
@@ -164,7 +166,7 @@ const TourSearch = (props) => {
                             `You have ${count} virtual tours left
                             for today!`
                             :
-                            `You have no tours left for today!`
+                            `You have no tours left for today, please come back tomorrow!`
                         }
                        
                     </p>
