@@ -121,7 +121,7 @@ const TourSearch = (props) => {
     }
 
     return (
-        <>
+        <section id="#search">
             <form onSubmit={(event, chosenTour) => {
                 handleSubmit(event, tourDropdown)
             }}>
@@ -148,7 +148,7 @@ for today!`}
                 </div>
 
             </form>
-        </>
+        </section>
     )
 }
 
