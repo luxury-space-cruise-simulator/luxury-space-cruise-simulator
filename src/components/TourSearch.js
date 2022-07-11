@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const TourSearch = (props) => {
 
-    const [tourDropdown, setTourDropdown] = useState('');
+   
     const [tourSubmit, setTourSubmit] = useState('');
     const [count, setCount] = useState(3);
 
@@ -11,7 +11,7 @@ const TourSearch = (props) => {
     const [currentDate, setCurrentDate] = useState('');
 
     const handleChange = (e) => {
-        setTourDropdown(e.target.value);
+        props.setTourDropdown(e.target.value);
     }
 
     const handleSubmit = function (e, chosenTour) {
@@ -33,7 +33,7 @@ const TourSearch = (props) => {
             params: {
                 start_date: currentDate,
                 end_date: '',
-                api_key: "",
+                api_key: "DEMO_KEY",
             }
         })
             .then((res) => {
@@ -82,29 +82,29 @@ const TourSearch = (props) => {
         const baseURL = `https://api.nasa.gov/mars-photos/api/v1/rovers`
         const key = `IX9fyGha33cKkGYIMNautItzjvO27KBdETb1U6r1`
 
-        if (tourDropdown === "curiosity") {
+        if (props.tourDropdown === "curiosity") {
             axios({
                 baseURL: `${baseURL}/curiosity/photos?api_key=${key}&sol=3397&camera=mast`,
             }).then((curiosityImageData) => {
                 //   console.log(curiosityImageData.data.photos);
-                props.setTourLocation(curiosityImageData.data.photos)
-            });
-        } if (tourDropdown === "spirit") {
+                  props.setTourLocation(curiosityImageData.data.photos)
+              });
+        } if (props.tourDropdown === "spirit") {
             axios({
                 baseURL: `${baseURL}/spirit/photos?api_key=${key}&sol=1277&camera=navcam`,
                 // pancam *alternate camera*
             }).then((spiritImageData) => {
                 //   console.log(spiritImageData.data);
-                props.setTourLocation(spiritImageData.data.photos)
-            });
-        } if (tourDropdown === "perseverance") {
+                  props.setTourLocation(spiritImageData.data.photos)
+              });
+        } if (props.tourDropdown === "perseverance") {
             axios({
                 baseURL: `${baseURL}/perseverance/photos?api_key=${key}&sol=489&camera=mcz_right`,
             }).then((perseveranceImageData) => {
                 //   console.log(perseveranceImageData.data);
-                props.setTourLocation(perseveranceImageData.data.photos)
-            });
-        } if (tourDropdown === "opportunity") {
+                  props.setTourLocation(perseveranceImageData.data.photos)
+              });
+        } if (props.tourDropdown === "opportunity") {
             axios({
                 baseURL: `${baseURL}/opportunity/photos?api_key=${key}&sol=4557&camera=navcam`,
             }).then((opportunityImageData) => {
@@ -123,9 +123,9 @@ const TourSearch = (props) => {
     return (
         <section id="#search">
             <form onSubmit={(event, chosenTour) => {
-                handleSubmit(event, tourDropdown)
+                handleSubmit(event, props.tourDropdown)
             }}>
-                <select onChange={handleChange} name="tour" id="chosenTour" value={tourDropdown}>
+                <select onChange={handleChange} name="tour" id="chosenTour" value={props.tourDropdown}>
                     <option value="" default disabled>Please choose a tour location</option>
                     <option value="curiosity">Gale Crater</option>
                     <option value="spirit">Gusev Crater</option>
@@ -149,6 +149,7 @@ for today!`}
 
             </form>
         </section>
+        
     )
 }
 
