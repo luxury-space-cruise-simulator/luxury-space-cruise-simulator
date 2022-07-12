@@ -13,7 +13,6 @@ const TourSearch = (props) => {
         // reset the counter if it's been 24 hours
         setInterval(function () {
             setCount(3)
-            console.log('reset button');
         }, 86400000);
     });
 
