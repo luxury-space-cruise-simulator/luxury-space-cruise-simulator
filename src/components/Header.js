@@ -1,8 +1,9 @@
 const Header = () => {
     return (
         <header>
-            <h1>YBS Galctic Tours</h1>
+            <h1>YBS Galactic Tours</h1>
             
+            <a href="#search" className="skip-link">Skip to main content.</a>
             <div className="headerText">
                 <h2>Mars Edition</h2>
                 <p>
