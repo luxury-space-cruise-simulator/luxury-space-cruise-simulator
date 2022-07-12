@@ -147,7 +147,6 @@ const TourSearch = (props) => {
                     }
                 </form>
             </div>
-
                 <div className="wrapper">
                     <div className="countP">
                         <p>
