@@ -24,6 +24,8 @@ const TourSearch = (props) => {
         const todaysDate = `${userDate.getFullYear()}-${userDate.getMonth() + 1}-${userDate.getDate()}`;
         setCurrentDate(todaysDate);
         props.setButtonClick(true);
+
+        decreaseCount();
     }
 
 
@@ -84,6 +86,7 @@ const TourSearch = (props) => {
     }, [currentDate]);
 
 
+    //calling Mars rover API 
     useEffect(() => {
 
         const baseURL = `https://api.nasa.gov/mars-photos/api/v1/rovers`
@@ -93,30 +96,38 @@ const TourSearch = (props) => {
             axios({
                 baseURL: `${baseURL}/curiosity/photos?api_key=${key}&sol=3397&camera=mast`,
             }).then((curiosityImageData) => {
-                //   console.log(curiosityImageData.data.photos);
                   props.setTourLocation(curiosityImageData.data.photos)
-              });
+              })
+              .catch(err => {
+                alert("Looks like the API database was struck by an asteroid ☄️, try searching again later");
+            });
         } if (props.tourDropdown === "spirit") {
             axios({
                 baseURL: `${baseURL}/spirit/photos?api_key=${key}&sol=1277&camera=navcam`,
-                // pancam *alternate camera*
             }).then((spiritImageData) => {
-                //   console.log(spiritImageData.data);
                   props.setTourLocation(spiritImageData.data.photos)
-              });
+              })
+              .catch(err => {
+                alert("Looks like the API database was struck by an asteroid ☄️, try searching again later");
+            });
         } if (props.tourDropdown === "perseverance") {
             axios({
                 baseURL: `${baseURL}/perseverance/photos?api_key=${key}&sol=489&camera=mcz_right`,
             }).then((perseveranceImageData) => {
-                //   console.log(perseveranceImageData.data);
                   props.setTourLocation(perseveranceImageData.data.photos)
-              });
+              })
+              .catch(err => {
+                alert("Looks like the API database was struck by an asteroid ☄️, try searching again later");
+            });
         } if (props.tourDropdown === "opportunity") {
             axios({
                 baseURL: `${baseURL}/opportunity/photos?api_key=${key}&sol=4557&camera=navcam`,
             }).then((opportunityImageData) => {
                   console.log(opportunityImageData.data);
                 props.setTourLocation(opportunityImageData.data.photos)
+            })
+            .catch(err => {
+                alert("Looks like the API database was struck by an asteroid ☄️, try searching again later");
             });
         }
 
@@ -140,17 +151,24 @@ const TourSearch = (props) => {
                     <option value="opportunity">Meridian Planum</option>
                 </select>
                 {
-                    (count >= 1)
+                    (count > 0)
                         ?
-                        <button onClick={decreaseCount} className="button">Take Me on a Virtual Tour</button>
+                        <button className="button">Take Me on a Virtual Tour</button>
                         :
-                        <button onClick={decreaseCount} disabled = {true}className="button">No more tours for you! 😭</button>
-
+                        <button disabled = {true}className="button">You Have Run Out of Tours for Today</button>
                 }
+                    
                 <div className="countP">
                     <p>
-                        {`You have ${count} virtual tours left
-for today!`}
+                        {
+                            (count > 0)
+                            ?
+                            `You have ${count} virtual tours left
+                            for today!`
+                            :
+                            `You have no tours left for today, please come back tomorrow!`
+                        }
+                       
                     </p>
                 </div>
 
