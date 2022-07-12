@@ -2,7 +2,7 @@ const DisplayData = (props) => {
 
     if (props.buttonClick) {
 
-        console.log(props)
+        // console.log(props)
         return (
             <div className="wrapper">
             <div className="safeDates">

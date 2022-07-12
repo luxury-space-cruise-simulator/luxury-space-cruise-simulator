@@ -3,12 +3,19 @@ import { useState, useEffect } from "react";
 
 const TourSearch = (props) => {
 
-   
+
+
     const [tourSubmit, setTourSubmit] = useState('');
     const [count, setCount] = useState(3);
-
-
     const [currentDate, setCurrentDate] = useState('');
+
+    useEffect( () => {
+        // reset the counter if it's been 24 hours
+        setInterval(function () {
+            setCount(3)
+            console.log('reset button');
+        }, 86400000);
+    });
 
     const handleChange = (e) => {
         props.setTourDropdown(e.target.value);
