@@ -26,7 +26,7 @@ const DetailsComponent = (props) => {
                 <div className="tourDetails">
                     <h2>Gusev Crater</h2> 
 
-                    <p>You can’t get a location hotter than this! The Gustav crater, in the Aelios quadrangle is home to the former site of an ancient lakebed and volcano. Visitors can enjoy the on-site meals prepared by our chef-du-cuisine Isaac Hayes including such delicacies as ancient charcoal bbq and lava cake.</p>  
+                    <p>You can’t get a location hotter than this! The Gusev crater, in the Aelios quadrangle is home to the former site of an ancient lakebed and volcano. Visitors can enjoy the on-site meals prepared by our chef-du-cuisine Isaac Hayes including such delicacies as ancient charcoal bbq and lava cake.</p>  
                 </div>
             </div>
             )

@@ -124,6 +124,7 @@ const TourSearch = (props) => {
     return (
 
         <section id="search" className="tourSearch">
+<<<<<<< HEAD
             <div className="searchFlex">
             <h3>Where would you like to explore?</h3>
             <form  className ="formFlex" onSubmit={(event, chosenTour) => {
@@ -146,17 +147,45 @@ const TourSearch = (props) => {
                 }
             </form>
             
+=======
+            <a href="https://www.freepnglogos.com/pics/mars" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/mars-png/mars-transparent-png-stickpng-0.png" width="200" alt="mars image red planet from space" /></a>
+            
+            <div className="searchFlex">
+                <h3>Where would you like to explore?</h3>
+                <form  className ="formFlex" onSubmit={(event, chosenTour) => {
+                    handleSubmit(event, props.tourDropdown)
+                    }}>
+                    <select onChange={handleChange} name="tour" id="chosenTour" value={props.tourDropdown}>
+                        <option value="" default disabled>Please choose a tour location</option>
+                        <option value="curiosity">Gale Crater</option>
+                        <option value="spirit">Gusev Crater</option>
+                        <option value="perseverance">Jezero Crater</option>
+                        <option value="opportunity">Meridian Planum</option>
+                    </select>
+                    {
+                        (count >= 1)
+                            ?
+                            <button onClick={decreaseCount} className="button">Take Me on a Virtual Tour</button>
+                            :
+                            <button onClick={decreaseCount} disabled = {true}className="button">No more tours for you! 😭</button>
+
+                    }
+                </form>
+>>>>>>> bf0d98862d8d27d53bcc7fd9c43f1f021bbd4fbb
             </div>
                 <div className="wrapper">
                     <div className="countP">
                         <p>
                             {`You have ${count} virtual tours left
-    for today!`}
+                        for today!`}
                         </p>
                     </div>
+<<<<<<< HEAD
                 </div>
                 <div className="marsImage">
                 <a href="https://www.freepnglogos.com/pics/mars" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/mars-png/mars-transparent-png-stickpng-0.png" width="200" alt="mars transparent png stickpng" /></a>
+=======
+>>>>>>> bf0d98862d8d27d53bcc7fd9c43f1f021bbd4fbb
                 </div>
 
         </section>
