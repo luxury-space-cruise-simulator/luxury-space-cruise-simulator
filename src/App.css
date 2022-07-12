@@ -19,8 +19,125 @@ html { box-sizing: border-box;}
   left: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Maitree&family=Montserrat&display=swap');
+
 html {
   font-size: 125%;
+}
+
+/* #FC3D21 is orange 
+#0B3D91 is blue  */
+/* #f4e6e8 is grey  */
+/* Heading font is Maitree (Regular 400 ) */
+/* Body font is Montserrat (Regular 400) */
+
+
+/* tour search section  */
+
+.tourSearch {
+  background-image: url(./assets/starBackground.jpg);
+  min-height: 50vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tourSearch img {
+  width: 100px;
+  height: 100px;
+}
+
+.tourSearch h3 {
+  text-align: center;
+  font-family: 'Maitree', serif;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: whitesmoke;
+  text-shadow: 1px 1px black;
+}
+
+.searchFlex {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form select {
+  width: fit-content;
+  margin: 0 auto;
+  background-color: #0B3D91;
+  color: whitesmoke;
+  font-family: 'Montserrat';
+  font-size: 1.5rem;
+}
+
+.button {
+  font-family: 'Montserrat';
+  font-size: 1.5rem;
+  width:fit-content;
+  height: 40px;
+  border: none;
+  margin: 60px auto 20px;
+  outline: none;
+  color: whitesmoke;
+  background: black;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 60px 3px #fff,
+  0 0 100px 6px #f0f,
+  0 0 140px 9px #0ff;
+}
+
+.button:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.button:hover:before {
+  opacity: 1;
+}
+
+.button:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.countP p {
+  color: whitesmoke;
+  text-align: right;
+  font-size: 1.5rem;
 }
 
 img {
@@ -59,6 +176,7 @@ img {
   display: flex;
   flex-wrap: wrap;
 } */
+
 
 a {
   text-decoration: none;
@@ -128,8 +246,4 @@ footer {
   text-align: center;
   background: #0B3D91;
   color: white;
-}
-
-footer a {
-  /* text-decoration: underline; */
 }

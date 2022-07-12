@@ -121,8 +121,11 @@ const TourSearch = (props) => {
     }
 
     return (
-        <section id="#search">
-            <form onSubmit={(event, chosenTour) => {
+        <section id="#search" className="tourSearch">
+            <a href="https://www.freepnglogos.com/pics/mars" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/mars-png/mars-transparent-png-stickpng-0.png" width="200" alt="mars image red planet from space" /></a>
+            <div className="searchFlex">
+            <h3>Where would you like to explore?</h3>
+            <form  className ="formFlex" onSubmit={(event, chosenTour) => {
                 handleSubmit(event, props.tourDropdown)
             }}>
                 <select onChange={handleChange} name="tour" id="chosenTour" value={props.tourDropdown}>
@@ -140,6 +143,7 @@ const TourSearch = (props) => {
                         <button onClick={decreaseCount} disabled = {true}className="button">No more tours for you! 😭</button>
 
                 }
+<<<<<<< HEAD
 
                 <div className="wrapper">
                     <div className="countP">
@@ -148,9 +152,17 @@ const TourSearch = (props) => {
     for today!`}
                         </p>
                     </div>
+=======
+                </form>
+                </div>
+                <div className="countP">
+                    <p>
+                        {`You have ${count} virtual tours left
+for today!`}
+                    </p>
+>>>>>>> ce20b414e855e4705dd099419cba7d99a336fcdb
                 </div>
 
-            </form>
         </section>
         
     )
