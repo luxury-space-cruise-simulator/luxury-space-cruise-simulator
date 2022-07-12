@@ -3,6 +3,7 @@ const Header = () => {
         <header>
             <h1>YBS Galactic Tours</h1>
             
+            <a href="#search" className="skip-link">Skip to main content.</a>
             <div className="headerText">
                 <h2>Mars Edition</h2>
                 <p>

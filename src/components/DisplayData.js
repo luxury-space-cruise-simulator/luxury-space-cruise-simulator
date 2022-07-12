@@ -1,11 +1,17 @@
 const DisplayData = (props) => {
 
-    if (props.buttonClick) {
 
-        console.log(props)
+
+    if (props.buttonClick && props.tourDropdown === "") {
+
         return (
-            <div className="wrapper">
-            <div className="safeDates">
+            <>
+                <p>Please select an option from the dropdown before submitting the form.</p>
+            </>
+        )
+    } else if (props.buttonClick && props.anyDatesAvailable) {
+        return (
+            <div className="wrapper safeDates">
                 <h3>Book an upcoming available date:</h3>
                 <ul className="datesContainer">
                     {props.safeDates.map((date) => {
@@ -19,9 +25,18 @@ const DisplayData = (props) => {
                     })}
                 </ul>
             </div>
-        </div>
+            )
+    } else if (props.buttonClick && props.anyDatesAvailable === false) {
+        return (
+            <>
+                <p>Sorry no available dates in the upcoming week. Please try again next week!</p>
+            </>
         )
     }
+
+
+
+    
 }
 
 export default DisplayData;
