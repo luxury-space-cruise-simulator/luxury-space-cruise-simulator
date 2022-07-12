@@ -6,6 +6,12 @@ html { box-sizing: border-box;}
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+/* @import url("https://fonts.googleapis.com/css2?family=Maitree&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap"); */
+
+@import url("https://fonts.googleapis.com/css2?family=Maitree&family=Montserrat&display=swap");
+
 .skip-link {
   position: absolute;
   left: -1000px;
@@ -21,6 +27,10 @@ html { box-sizing: border-box;}
 
 html {
   font-size: 125%;
+}
+
+body{
+  font-family: 'Maitree', serif;
 }
 
 img {
@@ -50,3 +60,15 @@ a{
   color: inherit;
 }
 
+header{
+  height: 100vh;
+  background: url(/assets/mars-man.jpg) no-repeat center/cover;
+  /* background: url(/assets/yeeting-man.jpg) no-repeat center/cover; */
+  /* background: url(/assets/mars-mountains-two.jpg) no-repeat center/cover; */
+  /* background: url(/assets/mars.jpg) no-repeat center/cover;  */
+}
+h1, h2{
+  text-align: center;
+  margin: 0;
+  font-family: 'Maitree', serif;
+}
