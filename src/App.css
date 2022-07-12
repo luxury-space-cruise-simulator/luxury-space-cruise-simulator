@@ -27,16 +27,16 @@ html {
   font-size: 125%;
 }
 
-body{
+/* body{
   font-family: 'Biryani', sans-serif;
   background-image: url(./assets/starBackground.jpg);
   /* background-image: url(/assets/374852.jpg); */
-  min-height: 50vh;
+  /* min-height: 50vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-}
+  background-size: cover; */
+/* } */ 
 
 a{
   text-decoration: none;
@@ -53,6 +53,8 @@ header{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; */
+  /* border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%; */
 }
 
 h1{
@@ -106,6 +108,11 @@ h1{
 
 /* tour search section  */
 
+.tourSearch {
+  background-image: linear-gradient(#c1440ed3, black);
+  min-height: 50vh;
+}
+
 
 .tourSearch img {
   width: 100px;
@@ -114,9 +121,8 @@ h1{
 
 .tourSearch h3 {
   text-align: center;
-  font-family: 'Maitree', serif;
+  font-family: 'Exo 2', sans-serif;
   font-size: 2rem;
-
   color: whitesmoke;
   text-shadow: 1px 1px black;
 }
@@ -134,29 +140,33 @@ form {
 form select {
   width: fit-content;
   margin: 0 auto;
-  background-color: #0B3D91;
+  background-color: #c1440e;
   color: whitesmoke;
-  font-family: 'Montserrat';
+  font-family: 'Exo 2', sans-serif;
   font-size: 1.5rem;
+  padding: 10px;
+  border: dotted 2px white;
 }
 
-.button {
-  font-family: 'Montserrat';
+
+ .button {
+  font-family: 'Exo 2', sans-serif;
   font-size: 1.5rem;
+  font-weight: bold;
   width:fit-content;
-  height: 40px;
+  height: 70px;
   border: none;
   margin: 60px auto 20px;
   outline: none;
   color: whitesmoke;
-  background: black;
+  text-shadow:2px 2px black;
   cursor: pointer;
   position: relative;
   z-index: 0;
   border-radius: 10px;
   box-shadow: 0 0 60px 3px #fff,
-  0 0 100px 6px #f0f,
-  0 0 140px 9px #0ff;
+  0 0 100px 6px rgb(255, 0, 0),
+  0 0 140px 9px rgb(255, 0, 0);
 }
 
 .button:before {
@@ -186,7 +196,7 @@ form select {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #111;
+  background: rgba(27, 27, 27, 0.767);
   left: 0;
   top: 0;
   border-radius: 10px;
@@ -202,6 +212,8 @@ form select {
   color: whitesmoke;
   text-align: right;
   font-size: 1.5rem;
+  font-family: "biryani";
+  margin-top: 100px;
 }
 
 img {

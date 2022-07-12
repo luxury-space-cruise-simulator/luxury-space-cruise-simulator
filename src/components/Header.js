@@ -1,7 +1,7 @@
 const Header = () => {
     return (
         <header>
-            <h1>YBS Galctic Tours</h1>
+            <h1>YBS Galactic Tours</h1>
             
             <div className="headerText">
                 <h2>Mars Edition</h2>
