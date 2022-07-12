@@ -6,6 +6,10 @@ html { box-sizing: border-box;}
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+
+@import url("https://fonts.googleapis.com/css2?family=Biryani&family=Exo+2&family=Orbitron&display=swap");
+
+
 .skip-link {
   position: absolute;
   left: -1000px;
@@ -19,29 +23,89 @@ html { box-sizing: border-box;}
   left: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Maitree&family=Montserrat&display=swap');
-
 html {
   font-size: 125%;
 }
 
-/* #FC3D21 is orange 
-#0B3D91 is blue  */
-/* #f4e6e8 is grey  */
-/* Heading font is Maitree (Regular 400 ) */
-/* Body font is Montserrat (Regular 400) */
-
-
-/* tour search section  */
-
-.tourSearch {
+body{
+  font-family: 'Biryani', sans-serif;
   background-image: url(./assets/starBackground.jpg);
+  /* background-image: url(/assets/374852.jpg); */
   min-height: 50vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* header styling */
+header{
+  height: 100vh;
+  /* background: url(/assets/mars.jpg) no-repeat center/cover; */
+  background: url(/assets/mars-man.jpg) no-repeat center/cover;
+  /* background: url(/assets/mars-man.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+h1{
+  text-align: center;
+  margin: 0;
+  /* font-family: 'Maitree', serif; */
+  /* font-family: 'Exo 2', sans-serif; */
+  font-family: 'Orbitron', sans-serif;
+  padding-top: 70px;
+  font-size: 3rem;
+  color: whitesmoke;
+  text-transform: uppercase;
+}
+
+.headerText{
+  width: 50vw;
+  text-align: center;
+  margin: 40px;
+  padding-top: 30px;
+  color: whitesmoke;
+  letter-spacing: 1px;
+}
+
+.headerText h2{
+  font-size: 2rem;
+  /* font-family: 'Orbitron', sans-serif; */
+  font-family: 'Exo 2', sans-serif;
+}
+
+.bookButton{
+  text-align: center;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+
+  
+}
+
+.bookButton:hover{
+  box-shadow: 1px 1px 30px 0 #0B3D91;
+  transform: scale(1.05);
+
+}
+
+/* #FC3D21 is orange 
+#0B3D91 is blue  */
+/* #f4e6e8 is grey  */
+
+
+/* tour search section  */
+
 
 .tourSearch img {
   width: 100px;
@@ -52,7 +116,7 @@ html {
   text-align: center;
   font-family: 'Maitree', serif;
   font-size: 2rem;
-  letter-spacing: 1px;
+
   color: whitesmoke;
   text-shadow: 1px 1px black;
 }

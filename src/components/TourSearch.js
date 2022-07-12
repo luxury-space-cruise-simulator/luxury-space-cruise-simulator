@@ -93,6 +93,7 @@ const TourSearch = (props) => {
             axios({
                 baseURL: `${baseURL}/spirit/photos?api_key=${key}&sol=1277&camera=navcam`,
                 // pancam *alternate camera*
+                // sol1227
             }).then((spiritImageData) => {
                 //   console.log(spiritImageData.data);
                   props.setTourLocation(spiritImageData.data.photos)
@@ -121,7 +122,7 @@ const TourSearch = (props) => {
     }
 
     return (
-        <section id="#search" className="tourSearch">
+        <section id="search" className="tourSearch">
             <a href="https://www.freepnglogos.com/pics/mars" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/mars-png/mars-transparent-png-stickpng-0.png" width="200" alt="mars image red planet from space" /></a>
             <div className="searchFlex">
             <h3>Where would you like to explore?</h3>
