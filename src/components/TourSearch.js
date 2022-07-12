@@ -140,11 +140,14 @@ const TourSearch = (props) => {
                         <button onClick={decreaseCount} disabled = {true}className="button">No more tours for you! 😭</button>
 
                 }
-                <div className="countP">
-                    <p>
-                        {`You have ${count} virtual tours left
-for today!`}
-                    </p>
+
+                <div className="wrapper">
+                    <div className="countP">
+                        <p>
+                            {`You have ${count} virtual tours left
+    for today!`}
+                        </p>
+                    </div>
                 </div>
 
             </form>

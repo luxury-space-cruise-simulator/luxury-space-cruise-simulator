@@ -35,18 +35,101 @@ img {
   margin: 0;
 }
 
-.carouselSize {
-  width: 70vw;
-  margin: 100px auto;
+.wrapper {
+  max-width: 1260px;
+  width: 80%;
+  margin: 0 auto;
 }
+
+/*  Tour Details  */
+.tourDetails {
+  text-align: center;
+  border: 1px solid red;
+  margin-bottom: 25px;
+}
+
+/* Carousel  */
+.carouselSize {
+  /* width: 70vw; */
+  margin: 0 auto;
+}
+
 
 /* .imagesFlex {
   display: flex;
   flex-wrap: wrap;
 } */
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
+/* Dates Styling  */
+.safeDates {
+  text-align: center;
+  border: 1px solid red;
+  margin-top: 25px;
+}
+
+.datesContainer {
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  
+}
+
+.datesListed {
+border: 2px solid #FC3D21;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 1px 1px rgba(252, 61, 33, 0.1),
+      0 2px 2px rgba(252, 61, 33, 0.1),
+      0 4px 4px rgba(252, 61, 33, 0.11),
+      0 8px 8px rgba(252, 61, 33, 0.11),
+      0 16px 16px rgba(252, 61, 33, 0.1);
+  cursor: pointer;
+  font-weight: bold;
+  height: 50px;
+  /* transform: skew(-15deg); */
+}
+
+.datesListed:hover, .datesListed:focus, .datesListed:active {
+  -webkit-animation-name: pulse-grow-on-hover;
+    animation-name: pulse-grow-on-hover;
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+@-webkit-keyframes pulse-grow-on-hover {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pulse-grow-on-hover {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+footer {
+  text-align: center;
+  background: #0B3D91;
+  color: white;
+}
+
+footer a {
+  /* text-decoration: underline; */
+}

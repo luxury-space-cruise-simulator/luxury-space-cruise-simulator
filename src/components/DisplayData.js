@@ -4,19 +4,22 @@ const DisplayData = (props) => {
 
         console.log(props)
         return (
-            <>
-                <ul>
+            <div className="wrapper">
+            <div className="safeDates">
+                <h3>Book an upcoming available date:</h3>
+                <ul className="datesContainer">
                     {props.safeDates.map((date) => {
                         return (
-
-                            <li key={date} >
-                                {date}
-                            </li>
-
+                            <div className="datesListed">
+                                <li key={date} >
+                                    {date}
+                                </li>
+                            </div>
                         )
                     })}
                 </ul>
-            </>
+            </div>
+        </div>
         )
     }
 }
