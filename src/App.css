@@ -231,9 +231,6 @@ img {
 
 /*  Tour Details  */
 
-.App {
-  background-color: #000;
-}
 
 .tourDetails {
   text-align: center;
@@ -262,7 +259,7 @@ img {
   margin-top: 30px;
   box-shadow: 0 0 60px 3px #0B3D91,
       0 0 20px 6px #0B3D91,
-      0 0 20px 9px rgb(255, 0, 0);
+      0 0 20px 6px rgb(255, 0, 0);
 }
 
 .carousel.carousel-slider {
@@ -291,7 +288,7 @@ a {
 }
 
 .safeDates h3 {
-  margin: 150px 0 100px 0;
+  margin: 100px 0 100px 0;
   font-size: 2rem
 }
 
