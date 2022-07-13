@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import LoadingSpinner from './LoadingSpinner';
 
 const TourSearch = (props) => {
 
@@ -91,6 +90,8 @@ const TourSearch = (props) => {
                 props.setIsLoading(false);
             })
         }
+
+        // Note: this suggests to add props to the dependency array - this is not a good idea as it will cause the app to malfunction
     }, [currentDate]);
 
 
@@ -135,7 +136,7 @@ const TourSearch = (props) => {
                 props.setTourLocation(opportunityImageData.data.photos)
             })
             .catch(err => {
-                alert("Looks like the API database was struck by an asteroid ☄️, try searching again later");
+                alert("Looks like the photo database was struck by an asteroid ☄️, try searching again later");
             });
         }
 
@@ -160,8 +161,11 @@ const TourSearch = (props) => {
             <span className="star"></span>
             <span className="star"></span>
 
+            <a href="https://www.freepnglogos.com/pics/mars" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/mars-png/mars-transparent-png-stickpng-0.png" width="200" alt="mars red planet from space" /></a>
             <div className="searchFlex">
             <h3>Where would you like to explore?</h3>
+            <p>Best way to scheule a trip to Mars: planet.</p>
+            <p>Search available destinations using the dropdown to be shown location amenities, an image gallery, and dates safe from asteroids in the upcoming week.</p>
             <form  className ="formFlex" onSubmit={(event, chosenTour) => {
                 handleSubmit(event, props.tourDropdown)
             }}>

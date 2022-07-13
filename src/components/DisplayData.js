@@ -6,7 +6,7 @@ const DisplayData = (props) => {
 
         return (
             <>
-                <p>Please select an option from the dropdown before submitting the form.</p>
+                <p className="wrapper">Please select an option from the dropdown before submitting the form.</p>
             </>
         )
     } else if (props.buttonClick && props.anyDatesAvailable) {
@@ -17,8 +17,8 @@ const DisplayData = (props) => {
                 <ul className="datesContainer">
                     {props.safeDates.map((date) => {
                         return (
-                            <div className="datesListed">
-                                <li key={date} >
+                            <div className="datesListed" key={date} >
+                                <li>
                                     {date}
                                 </li>
                             </div>
@@ -31,7 +31,7 @@ const DisplayData = (props) => {
     } else if (props.buttonClick && props.anyDatesAvailable === false) {
         return (
             <>
-                <p>Sorry no available dates in the upcoming week. Please try again next week!</p>
+                <p className="wrapper">Sorry no available dates in the upcoming week. Please try again next week!</p>
             </>
         )
     }
