@@ -22,43 +22,47 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <TourSearch 
-      setTourLocation={setTourLocation}
-      setDates={setDates}
-      setButtonClick={setButtonClick}
-      buttonClick={buttonClick}
-      tourDropdown={tourDropdown}
-      setTourDropdown={setTourDropdown}
-      setAnyDatesAvailable={setAnyDatesAvailable}
-      setIsLoading={setIsLoading}
-      />
-      <DetailsComponent
-      tourDropdown={tourDropdown}
-      setTourDropdown={setTourDropdown}
-      buttonClick={buttonClick}
-      />
-      
-      {buttonClick 
-        ?
-        <CarouselComponent
-        tourLocation={tourLocation}
+      <main>
+        <TourSearch 
+        setTourLocation={setTourLocation}
+        setDates={setDates}
+        setButtonClick={setButtonClick}
+        buttonClick={buttonClick}
+        tourDropdown={tourDropdown}
+        setTourDropdown={setTourDropdown}
+        setAnyDatesAvailable={setAnyDatesAvailable}
+        setIsLoading={setIsLoading}
         />
-        : 
-        null
-      }
-       {
-        isLoading
-          ? <LoadingSpinner />
-          : null
-      }
-      <DisplayData
-      tourLocation={tourLocation}
-      safeDates={dates}
-      buttonClick={buttonClick}
-      anyDatesAvailable={anyDatesAvailable}
-      tourDropdown={tourDropdown}
-      setButtonClick={setButtonClick}
-      />
+        <section>
+          <DetailsComponent
+          tourDropdown={tourDropdown}
+          setTourDropdown={setTourDropdown}
+          buttonClick={buttonClick}
+          />
+          
+          {buttonClick 
+            ?
+            <CarouselComponent
+            tourLocation={tourLocation}
+            />
+            : 
+            null
+          }
+          {
+            isLoading
+              ? <LoadingSpinner />
+              : null
+          }
+          <DisplayData
+          tourLocation={tourLocation}
+          safeDates={dates}
+          buttonClick={buttonClick}
+          anyDatesAvailable={anyDatesAvailable}
+          tourDropdown={tourDropdown}
+          setButtonClick={setButtonClick}
+          />
+        </section>
+      </main>
       <Footer />
     </div>
   );

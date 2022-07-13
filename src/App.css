@@ -10,7 +10,7 @@ html { box-sizing: border-box;}
 @import url("https://fonts.googleapis.com/css2?family=Biryani&family=Exo+2&family=Orbitron&display=swap");
 
 
-.skip-link {
+.skipLink {
   position: absolute;
   left: -1000px;
   top: 5px;
@@ -19,7 +19,7 @@ html { box-sizing: border-box;}
   color: black;
 }
 
-.skip-link:focus {
+.skipLink:focus {
   left: 0;
 }
 
@@ -313,13 +313,13 @@ footer {
 }
 /* Loading spinner */
 
-.spinner-container {
+.spinnerContainer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.loading-spinner {
+.loadingSpinner {
   width: 50px;
   height: 50px;
   border: 10px solid RGB(255, 255, 255, 0.5);
