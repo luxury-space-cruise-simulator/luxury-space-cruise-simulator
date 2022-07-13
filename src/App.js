@@ -32,11 +32,13 @@ function App() {
       setAnyDatesAvailable={setAnyDatesAvailable}
       setIsLoading={setIsLoading}
       />
+      <div className="resultsArea">
       <DetailsComponent
       tourDropdown={tourDropdown}
       setTourDropdown={setTourDropdown}
       buttonClick={buttonClick}
       />
+
       
       {buttonClick 
         ?
@@ -59,6 +61,8 @@ function App() {
       tourDropdown={tourDropdown}
       setButtonClick={setButtonClick}
       />
+
+      </div>
       <Footer />
     </div>
   );

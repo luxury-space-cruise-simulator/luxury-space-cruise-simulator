@@ -4,6 +4,7 @@ const DetailsComponent = (props) => {
         return (
         <div className="wrapper">
             <div className="tourDetails">
+                
                 <h2>Gale Crater</h2> 
 
                 <p>Come see one of the greatest dry lakes in Mars! North of the Aeolis quadrangle, the Gale crater is so big that it is home to Aeolis Mons, a whole mountain 5,500m from the crater floor. Notable for its clay and sulfate deposits, come visit our on-site Gale Crater spa for a red clay masque like you’ve never experienced before!</p>  

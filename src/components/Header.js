@@ -1,5 +1,6 @@
 const Header = () => {
     return (
+        <div className="backHeader">
         <header>
             <h1>YBS Galactic Tours</h1>
             
@@ -17,6 +18,7 @@ const Header = () => {
 
 
         </header>
+        </div>
         
     );
 }

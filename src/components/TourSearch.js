@@ -147,8 +147,18 @@ const TourSearch = (props) => {
     }
 
     return (
-
+        <div className="blackTourBG">
         <section id="search" className="tourSearch">
+            <span className="star"></span>
+            <span className="star"></span>
+            <span className="star"></span>
+            <span className="star"></span>
+            <span className="star"></span>
+            <span className="star"></span>
+            <span className="star"></span>
+            <span className="star"></span>
+            <span className="star"></span>
+            <span className="star"></span>
 
             <div className="searchFlex">
             <h3>Where would you like to explore?</h3>
@@ -173,35 +183,31 @@ const TourSearch = (props) => {
             
            
             </div>
-                <div className="wrapper">
-                    <div className="countP">
-                        <p>
-                            {`You have ${count} virtual tours left
-                        for today!`}
-                        </p>
-                    </div>
-                </div>
+                    
+                
                 <div className="marsImage">
                 <a href="https://www.freepnglogos.com/pics/mars" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/mars-png/mars-transparent-png-stickpng-0.png" width="200" alt="mars transparent png stickpng" /></a>
 
             </div>
-                    
+            <div className="wrapper">
                 <div className="countP">
                     <p>
                         {
                             (count > 0)
                             ?
                             `You have ${count} virtual tours left
-                            for today!`
+                            for today`
                             :
-                            `You have no tours left for today, please come back tomorrow!`
+                            `You have no tours left for today, please come back tomorrow`
                         }
                        
                     </p>
 
                 </div>
+                </div>
 
         </section>
+        </div>
        
         
     )

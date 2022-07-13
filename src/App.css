@@ -33,21 +33,21 @@ html {
   scroll-behavior: smooth;
 }
 
-/* body{
-  font-family: 'Biryani', sans-serif;
-  background-image: url(./assets/starBackground.jpg);
-  min-height: 50vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
-/* } */ 
-
+.wrapper {
+  max-width: 1260px;
+  width: 80%;
+  margin: 0 auto;
+}
 
 /* header styling */
 header{
   height: 100vh;
   background: url(/assets/mars-man.jpg) no-repeat center/cover;
+  clip-path: ellipse(70% 60% at 50% 40%);
+}
+
+.backHeader {
+  background-color: #c1440e;
 }
 
 h1{
@@ -96,31 +96,29 @@ h1{
 
 }
 
-/* #FC3D21 is orange 
-#0B3D91 is blue  */
-/* #f4e6e8 is grey  */
-
 
 /* tour search section  */
 
 .tourSearch {
-  background-image: linear-gradient(#c1440ed3, black);
+  background-image: linear-gradient(#c1440e, black);
   min-height: 50vh;
+  clip-path: ellipse(70% 60% at 50% 40%);
+  position: relative;
 }
 
-
-.tourSearch img {
-  width: 100px;
-  height: 100px;
+.blackTourBG {
+  background-image: url('./assets/hdStarBG.jpg');
+  background-size:contain;
 }
 
 .tourSearch h3 {
   text-align: center;
   font-family: 'Exo 2', sans-serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: whitesmoke;
   text-shadow: 1px 1px black;
 }
+
 
 .searchFlex {
   display: flex;
@@ -209,25 +207,142 @@ form select {
   font-size: 1.5rem;
   font-family: "biryani";
   margin-top: 100px;
+  margin-bottom: 0;
+  padding-bottom: 100px;
+}
+
+/* stars animation  */
+
+.star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1)  ;
+  animation:  animate 3s linear infinite;
+}
+.star::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg, #fff, transparent);
+}
+@keyframes animate {
+  0%
+  {
+      transform: rotate(315deg) translateX(0);
+      opacity: 1;
+  }
+  70%
+  {
+      opacity: 1;
+
+  }
+  100%
+  {
+      transform: rotate(315deg) translateX(-1500px);
+      opacity: 0;
+
+  }
+  
+}
+.star:nth-child(1){
+  top: 150px;
+  right: 0;
+  left:initial;
+  animation-delay:0 ;
+  animation-duration: 1s;
+}
+
+.star:nth-child(2){
+  top: 150px;
+  right: 80px;
+  left:initial;
+  animation-delay:0.2s;
+  animation-duration: 3s;
+}
+
+.star:nth-child(3){
+  top: 150px;
+  right: 0px;
+  left:initial;
+  animation-delay:0.4s ;
+  animation-duration: 2s;
+}
+
+.star:nth-child(4){
+  top: 150px;
+  right: 180px;
+  left:initial;
+  animation-delay:0.6s;
+  animation-duration: 1.5s;
+}
+
+.star:nth-child(5){
+  top: 150px;
+  right: 400px;
+  left:initial;
+  animation-delay:0.8s;
+  animation-duration: 2.5s;
+}
+
+.star:nth-child(6){
+  top: 150px;
+  right: 600px;
+  left:initial;
+  animation-delay:1s ;
+  animation-duration: 3s;
+}
+.star:nth-child(7 ){
+  top: 300px;
+  right: 1400px;
+  left:initial;
+  animation-delay:1s ;
+  animation-duration: 1.75s;
+}
+
+.star:nth-child(8){
+  top: 150px;
+  right: 1300px;
+  left:initial;
+  animation-delay:1.4s ;
+  animation-duration: 3s;
+}
+
+.star:nth-child(9){
+  top: 150px;
+  right: 1100px;
+  left:initial;
+  animation-delay:0.75s ;
+  animation-duration: 2.25s;
+}
+
+.star:nth-child(10){
+  top: 150px;
+  right: 1000px;
+  left:initial;
+  animation-delay:2.75s ;
+  animation-duration: 2.25s;
 }
 
 img {
   height: 100%;
   width: 100%;
-
 }
 
-.imgContainer {
-  width: 100vw;
-  max-height: 75vh;
-  margin: 0;
+.marsImage {
+  position: absolute;
+  left: 15%;
+  bottom: 15%;
 }
 
-.wrapper {
-  max-width: 1260px;
-  width: 80%;
-  margin: 0 auto;
-}
+/
 
 /*  Tour Details  */
 .tourDetails {
@@ -257,10 +372,6 @@ img {
   overflow: hidden;
 
 }
-/* .imagesFlex {
-  display: flex;
-  flex-wrap: wrap;
-} */
 
 
 a {
@@ -418,4 +529,50 @@ footer p {
     transform: rotate(360deg);
   }
 }
+
+
+/* PRACTICE */
+
+
+/* .tourSearch{
+  position: relative; */
+ 
+
+
+.resultsArea {
+  background-image: url('./assets/hdStarBG.jpg');
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h2 {
+  margin: 0;
+}
+
+
+/* MediaQueries */
+
+@media (max-width: 1400px) {
+  .marsImage {
+    width: 200px;
+    height: 200px;
+    left: 10%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .marsImage img {
+    display: none;
+  }
+
+  .countP p{
+    text-align: center;
+  }
+  
+
+}
+
 
