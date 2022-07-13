@@ -56,7 +56,7 @@ h1{
   margin-left: 200px;
   padding-top: 150px;
   font-family: 'Orbitron', sans-serif;
-  font-size: 3rem;
+  font-size: 3.7rem;
   color: whitesmoke;
   text-transform: uppercase;
   text-shadow: black 3px 3px;
@@ -68,18 +68,23 @@ h1{
   width: 50vw;
   text-align: center;
   margin: 50px;
-  margin-left: 130px;
-  color: whitesmoke;
+  margin-left: 200px;
+  color: white;
   letter-spacing: 1px;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(0, 0, 0, 0.384);
   padding: 15px;
   border-radius: 30%;
+}
+
+.headerText p {
+  font-size: 1.2rem;
 }
 
 .headerText h2{
   font-size: 2rem;
   font-family: 'Exo 2', sans-serif;
   margin: 0 auto;
+  color: 
 }
 
 .bookButton{
@@ -89,7 +94,11 @@ h1{
   border: none;
   padding: 10px;
   cursor: pointer;
-  color: blue;
+  font-weight: bold;
+  color: white;
+  border-radius: 30%;
+  background: #c1440e;
+  border: white 2px solid;
   
 }
 
