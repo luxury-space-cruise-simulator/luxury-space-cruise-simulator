@@ -3,8 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const CarouselComponent = (props) => {
     return (
-        <div className="wrapper">
-            <div className="carouselSize">
+        <div className="wrapper carouselSize">
             <Carousel centerMode={false} infiniteLoop={true} autoPlay={true} showStatus={false} showIndicators={false} showThumbs={false}>
                     {
                         props.tourLocation.slice(0, 15).map((photo) => {
@@ -18,7 +17,6 @@ const CarouselComponent = (props) => {
                         })
                     }
                 </Carousel>
-            </div>
         </div>
 
 

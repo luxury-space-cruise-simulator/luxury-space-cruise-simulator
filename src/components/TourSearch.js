@@ -172,6 +172,7 @@ const TourSearch = (props) => {
                     <option value="perseverance">Jezero Crater</option>
                     <option value="opportunity">Meridian Planum</option>
                 </select>
+                
                 {
                     (count > 0)
                         ?

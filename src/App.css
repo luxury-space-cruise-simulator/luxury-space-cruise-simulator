@@ -67,7 +67,7 @@ h1{
 .headerText{
   width: 50vw;
   text-align: center;
-  margin: 50px;
+  margin-top: 50px;
   margin-left: 200px;
   color: white;
   letter-spacing: 1px;
@@ -84,7 +84,7 @@ h1{
   font-size: 2rem;
   font-family: 'Exo 2', sans-serif;
   margin: 0 auto;
-  color: 
+  color: white;
 }
 
 .bookButton{
@@ -354,32 +354,67 @@ img {
 }
 
 /*  Tour Details  */
+
+
 .tourDetails {
   text-align: center;
   color: white;
   margin-bottom: 25px;
-  font-size: 1.5rem;
+  padding-top: 100px;
+  font-family: 'Exo 2', sans-serif;
 }
 
+.tourDetails h2 {
+  font-size: 3rem;
+  background-color: rgba(255, 255, 255, 0.479);
+  text-shadow: black 3px 3px;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 15%;
+  padding: 0 20px;
+}
+
+.tourDetails p {
+  background: rgba(255, 0, 0, 0.473);
+  padding: 20px;
+  border-radius: 15%;
+  border: white 1px solid;
+}
 /* Carousel  */
 .carouselSize {
   /* width: 70vw; */
   margin: 0 auto;
-}
-.carousel-root {
-  margin-top: 100px;
-  box-shadow: 0 0 1px 1px rgb(0, 0, 0),
-      0 0 20px 1px rgb(0, 30, 255),
-      0 0 20px 9px rgb(255, 255, 255);
+  color: white;
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
 }
 
+.carouselSize p {
+  font-family: 'Exo 2', sans-serif;
+  margin: 100px 0 0 0;
+}
+.carousel-root {
+  margin-top: 30px;
+  /* box-shadow: 0 0 60px 3px #0B3D91,
+      0 0 20px 6px #0B3D91,
+      0 0 20px 6px rgb(255, 0, 0); */
+}
+
+.imgContainer {
+  width: 800px;
+  height: 800px;
+  margin: 0 auto;
+}
+
+.imgContainer img {
+  border-radius: 50%;
+}
 
 
 .carousel.carousel-slider {
   position: relative;
   margin: 0;
   overflow: hidden;
-
 }
 
 
@@ -393,11 +428,28 @@ a {
   text-align: center;
   color: white;
   margin-top: 25px;
+  font-family: 'Exo 2', sans-serif;
+  /* margin-bottom: 80px; */
 }
 
 .safeDates h3 {
-  margin: 50px;
+  margin: 50px 0 100px 0;
   font-size: 2rem;
+  background: rgba(255, 255, 255, 0.582);
+  color: black;
+  width: fit-content;
+  border-radius: 15%;
+  padding: 15px;
+  text-shadow: white 2px 2px;
+  margin: 0 auto;
+}
+
+.safeDates p {
+  margin: 0;
+}
+
+.safeDates a {
+  text-decoration: underline;
 }
 
 .datesContainer {
@@ -407,23 +459,25 @@ a {
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 80px;
+  margin: 100px 0 50px 0;
 }
 
 .datesListed {
+  font-family: 'Exo 2', sans-serif;
   font-size: 1.3rem;
   height: 60px;
   padding: 15px 10px 10px 10px;
   border: none;
   outline: none;
   color: whitesmoke;
-  background: black;
+  background: rgba(0, 0, 0, 0.699);
   cursor: pointer;
   position: relative;
   z-index: 0;
   border-radius: 10px;
-  box-shadow: 0 0 20px 3px #fff,
-    0 0 60px 6px #f0f,
-    0 0 60px 9px #0ff;
+  box-shadow: 0 0 60px 3px #fff,
+      0 0 20px 6px rgb(255, 0, 0),
+      0 0 20px 9px rgb(255, 0, 0);
 }
 
 .datesListed:hover, .datesListed:focus, .datesListed:active {
@@ -466,7 +520,7 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #111;
+  background: rgba(255, 0, 0, 0.671);
   left: 0;
   top: 0;
   border-radius: 10px;
@@ -501,13 +555,22 @@ a {
   }
 }
 
-footer {
-  height: 100%;
-  width: 100%;
+.safeDates p {
+  margin: 0 auto;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.479);
+  padding: 15px;
+  color: black;
+  width: 50%;
 }
+
+footer {
+  font-family: 'Exo 2', sans-serif;
+  background-color: black;
+}
+
 footer p {
   text-align: center;
-  background-color: black;
   color: white;
   margin: 0;
   padding: 20px;
@@ -540,12 +603,6 @@ footer p {
 }
 
 
-/* PRACTICE */
-
-
-/* .tourSearch{
-  position: relative; */
- 
 
 
 .resultsArea {
