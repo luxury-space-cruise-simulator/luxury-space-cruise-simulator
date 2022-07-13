@@ -41,7 +41,7 @@ html {
 
 /* header styling */
 header{
-  height: 100vh;
+  min-height: 100vh;
   background: url(./assets/mars-man.jpg) no-repeat center/cover;
   clip-path: ellipse(70% 60% at 50% 40%);
 }
@@ -51,24 +51,29 @@ header{
 }
 
 h1{
-  text-align: center;
-  margin: 0 auto;
+  text-align: left;
+  margin: 0;
+  margin-left: 200px;
+  padding-top: 150px;
   font-family: 'Orbitron', sans-serif;
-  padding-top: 70px;
   font-size: 3rem;
   color: whitesmoke;
   text-transform: uppercase;
+  text-shadow: black 3px 3px;
+  border-bottom: whitesmoke 5px dotted;
+  width: fit-content;
 }
 
 .headerText{
   width: 50vw;
   text-align: center;
-  margin: 190px;
+  margin: 50px;
+  margin-left: 130px;
   color: whitesmoke;
   letter-spacing: 1px;
   background-color: rgba(255,255,255,0.5);
   padding: 15px;
-  border-radius: 50%;
+  border-radius: 30%;
 }
 
 .headerText h2{
