@@ -120,6 +120,7 @@ h1{
 .blackTourBG {
   background-image: url('./assets/hdStarBG.jpg');
   background-size:contain;
+  object-fit: cover;
 }
 
 .tourSearch h3 {
@@ -642,6 +643,12 @@ h2 {
   .countP p{
     text-align: center;
   }
+
+    .imgContainer {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+    }
 }
 
 @media (max-width: 650px) {
