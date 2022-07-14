@@ -644,8 +644,33 @@ h2 {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 550px) {
+  form select {
+    font-size: 1rem;
+  }
 
+  .tourSearch h3 {
+    font-size: 2rem;
+  }
 }
 
+@media (max-width: 370px) {
+  form select {
+    font-size: .8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star {
+    animation: none;
+  }
+
+  .datesListed {
+    animation: none;
+  }
+
+  .button {
+    animation: none;
+  }
+}
 
