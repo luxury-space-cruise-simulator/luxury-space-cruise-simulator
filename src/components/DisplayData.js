@@ -5,9 +5,9 @@ const DisplayData = (props) => {
     if (props.buttonClick && props.tourDropdown === "") {
 
         return (
-            <>
-                <p className="wrapper">Please select an option from the dropdown before submitting the form.</p>
-            </>
+            <div className="tourDetails wrapper">
+                <p>Please select an option from the dropdown before submitting the form.</p>
+            </div>
         )
     } else if (props.buttonClick && props.anyDatesAvailable) {
         return (
@@ -29,9 +29,9 @@ const DisplayData = (props) => {
             )
     } else if (props.buttonClick && props.anyDatesAvailable === false) {
         return (
-            <>
-                <p className="wrapper">Sorry no available dates in the upcoming week. Please try again next week!</p>
-            </>
+            <div className="tourDetails wrapper">
+                <p>Sorry no available dates in the upcoming week. Please try again next week!</p>
+            </div>
         )
     }
 
