@@ -49,11 +49,7 @@ function App() {
             : 
             null
           }
-          {
-            isLoading
-              ? <LoadingSpinner />
-              : null
-          }
+          
           <DisplayData
           tourLocation={tourLocation}
           safeDates={dates}
@@ -62,6 +58,11 @@ function App() {
           tourDropdown={tourDropdown}
           setButtonClick={setButtonClick}
           />
+            {
+              isLoading
+                ? <LoadingSpinner />
+                : null
+            }
           </div>
         </section>
       </main>
