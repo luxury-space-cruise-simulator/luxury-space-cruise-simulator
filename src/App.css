@@ -136,6 +136,13 @@ h1{
   flex-direction: column;
 }
 
+.searchFlex p {
+color: whitesmoke;
+font-size: 1.3rem;
+text-align: center;
+margin-top: 0;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -364,7 +371,7 @@ img {
   font-family: 'Exo 2', sans-serif;
 }
 
-.tourDetails h2 {
+.tourDetails h4 {
   font-size: 3rem;
   background-color: rgba(255, 255, 255, 0.479);
   text-shadow: black 3px 3px;
@@ -455,11 +462,12 @@ a {
 .datesContainer {
   list-style: none;
   padding: 10px;
+  padding-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 80px;
-  margin: 100px 0 50px 0;
+  margin: 100px 0 0 0;
 }
 
 .datesListed {
@@ -475,9 +483,9 @@ a {
   position: relative;
   z-index: 0;
   border-radius: 10px;
-  box-shadow: 0 0 60px 3px #fff,
-      0 0 20px 6px rgb(255, 0, 0),
-      0 0 20px 9px rgb(255, 0, 0);
+  box-shadow: 0 0 30px 3px #fff,
+      0 0 10px 6px rgb(255, 0, 0),
+      0 0 10px 9px rgb(255, 0, 0);
 }
 
 .datesListed:hover, .datesListed:focus, .datesListed:active {
@@ -602,10 +610,7 @@ footer p {
   }
 }
 
-
-
-
-main{
+.starBackground {
   background-image: url('./assets/hdStarBG.jpg');
   min-height: 500px;
   background-attachment: fixed;
@@ -629,7 +634,50 @@ h2 {
   }
 }
 
+@media(max-width: 1250px){
+  
+  header{
+    clip-path: ellipse(80% 60% at 50% 40%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1{
+    margin: 0 auto;
+    font-size: 3rem;
+  }
+
+  .headerText{
+    margin-top: 100px;
+    padding: 20px;
+  }
+
+  .backHeader{
+    padding-bottom: 0;
+  }
+}
+
+@media(max-width: 1030px){
+
+
+  h1{
+    font-size: 2.5rem;
+  }
+
+  .headerText h2{
+    font-size: 1.9rem;
+  }
+
+  .headerText p{
+    font-size: 1rem;
+  }
+}
 @media (max-width: 1000px) {
+
+  header{
+    height: 50vh;
+  }
+
   .marsImage img {
     display: none;
   }
@@ -639,7 +687,36 @@ h2 {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 880px){
+  h1{
+    border-bottom: none;
+    font-size: 2.2rem;
+  }
+  .headerText h2{
+    font-size: 1.6rem;
+  }
+
+  .headerText p{
+    font-size: 0.9rem;
+    
+  }
+}
+
+@media (max-width: 800px){
+  h1{
+    font-size: 1.8rem;
+
+  }
+ .headerText{
+  padding: 40px;
+ }
+}
+
+@media (max-width: 680px) {
+.headerText{
+
+
+}
 
 }
 

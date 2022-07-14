@@ -25,6 +25,10 @@ const TourSearch = (props) => {
     const handleSubmit = function (e, chosenTour) {
         e.preventDefault();
         setTourSubmit(chosenTour);
+        window.scrollBy({
+            top: 2000,
+            behavior: 'smooth'
+          });
 
         // setting the date (object + variable) the user clicked the tour button to set the search param 
         let userDate = new Date();
@@ -161,10 +165,8 @@ const TourSearch = (props) => {
             <span className="star"></span>
             <span className="star"></span>
 
-            <a href="https://www.freepnglogos.com/pics/mars" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/mars-png/mars-transparent-png-stickpng-0.png" width="200" alt="mars red planet from space" /></a>
-            <div className="searchFlex">
+            <div className="searchFlex wrapper">
             <h3>Where would you like to explore?</h3>
-            <p>Best way to scheule a trip to Mars: planet.</p>
             <p>Search available destinations using the dropdown to be shown location amenities, an image gallery, and dates safe from asteroids in the upcoming week.</p>
             <form  className ="formFlex" onSubmit={(event, chosenTour) => {
                 handleSubmit(event, props.tourDropdown)

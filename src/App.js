@@ -34,6 +34,7 @@ function App() {
         setIsLoading={setIsLoading}
         />
         <section>
+          <div className="starBackground">
           <DetailsComponent
           tourDropdown={tourDropdown}
           setTourDropdown={setTourDropdown}
@@ -61,6 +62,7 @@ function App() {
           tourDropdown={tourDropdown}
           setButtonClick={setButtonClick}
           />
+          </div>
         </section>
       </main>
       <Footer />
