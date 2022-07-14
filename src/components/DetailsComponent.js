@@ -1,3 +1,6 @@
+
+// description of the location to display based on the user selection
+
 const DetailsComponent = (props) => {
     
     if ( props.tourDropdown === "curiosity" && props.buttonClick) {

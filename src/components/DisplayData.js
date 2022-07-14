@@ -1,6 +1,6 @@
+// Displays available dates based on the user's time of submission including messages to display in case of errors
+
 const DisplayData = (props) => {
-
-
 
     if (props.buttonClick && props.tourDropdown === "") {
 

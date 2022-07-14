@@ -1,27 +1,28 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
+// Main submission form and resulting fetches to the API
+
 const TourSearch = (props) => {
-
-
 
     const [tourSubmit, setTourSubmit] = useState('');
     const [count, setCount] = useState(3);
     const [currentDate, setCurrentDate] = useState('');
     
-
+    // reset the counter for amount of trips if it's been 24 hours
     useEffect( () => {
-        // reset the counter if it's been 24 hours
         setInterval(function () {
             setCount(3)
         }, 86400000);
     });
 
+    // when the tour dropdown changes, React is aware of the value and the button to submit hasn't 'happened' yet
     const handleChange = (e) => {
         props.setTourDropdown(e.target.value);
         props.setButtonClick(false);
     }
 
+    // when the user has submitted theur choice from the dropdown, set the date to today to use for the asteroid API and store in state that the submit button has been clicked
     const handleSubmit = function (e, chosenTour) {
         e.preventDefault();
         setTourSubmit(chosenTour);
@@ -51,15 +52,14 @@ const TourSearch = (props) => {
             }
         })
             .then((res) => {
-                // console.log(res.data.near_earth_objects)
                 const datesObject = res.data.near_earth_objects
                 for (const [asteroidDate, dateEntries] of Object.entries(datesObject)) {
 
+                    // checking if the asteroid dates are dangerous or not and removing the date if they are dangerous
                     let dangerous = false;
                     for (const asteroid of dateEntries) {
 
                         if (asteroid.is_potentially_hazardous_asteroid) {
-                            // console.log("HI MOM")
                             dangerous = true;
                             break
                         }
@@ -70,10 +70,9 @@ const TourSearch = (props) => {
                     }
 
                 }
-                // console.log(datesObject);
 
+                // if ALL the upcoming dates are dangerous, throw an error to display for the user that there's no available dates
                 const isEmpty = Object.keys(datesObject).length === 0;
-                // console.log(isEmpty);
 
                 if (isEmpty) {
                     throw new Error('No available dates')
@@ -91,11 +90,11 @@ const TourSearch = (props) => {
             })
         }
 
-        // Note: this suggests to add props to the dependency array - this is not a good idea as it will cause the app to malfunction
+        // Note: VS Code suggests to add props to the dependency array - this is not a good idea as it will cause the app to malfunction
     }, [currentDate]);
 
 
-    //calling Mars rover API 
+    //calling Mars rover API for images to display, matching them to the value in the dropdown
     useEffect(() => {
 
         const baseURL = `https://api.nasa.gov/mars-photos/api/v1/rovers`
@@ -132,21 +131,22 @@ const TourSearch = (props) => {
             axios({
                 baseURL: `${baseURL}/opportunity/photos?api_key=${key}&sol=4557&camera=navcam`,
             }).then((opportunityImageData) => {
-                  console.log(opportunityImageData.data);
                 props.setTourLocation(opportunityImageData.data.photos)
             })
             .catch(err => {
                 alert("Looks like the photo database was struck by an asteroid ☄️, try searching again later");
             });
         }
-
+        // Note: VS Code suggests to add props to the dependency array - this is not a good idea as it will cause the app to malfunction
     }, [tourSubmit]);
 
 
+    // function to decrease the number of tours allowed 
     const decreaseCount = () => {
         setCount(count - 1);
     }
 
+    // main submission form with a description for the user of how to use it and what to expect
     return (
         <div className="blackTourBG">
         <section id="search" className="tourSearch">

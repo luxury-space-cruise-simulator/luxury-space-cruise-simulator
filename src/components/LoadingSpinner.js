@@ -1,3 +1,4 @@
+// Loading spinner to display when the dates take longer to come back
 
 const LoadingSpinner = () => {
     return (
