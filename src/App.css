@@ -89,7 +89,6 @@ h1{
 
 .bookButton{
   text-align: center;
-  border-radius: 5px;
   text-transform: uppercase;
   border: none;
   padding: 10px;
@@ -720,12 +719,17 @@ h2 {
  }
 }
 
-@media (max-width: 680px) {
-.headerText{
-
-}
 
 @media (max-width: 550px) {
+
+  .headerText{
+    margin: 50px 0 0 140px;
+  }
+
+  h1{
+    font-size: 1.5rem;
+  }
+
   form select {
     font-size: 1rem;
   }
@@ -735,9 +739,45 @@ h2 {
   }
 }
 
+@media(max-width: 450px){
+  .headerText{
+    width: 60vw;
+    margin-left: 100px;
+  }
+}
+
+@media(max-width: 400px){
+  h1{
+  font-size: 1.3rem;
+  }
+  .headerText h2{
+    font-size: 1.2rem;
+  }
+}
 @media (max-width: 370px) {
+  h1{
+    font-size: 1.2rem;
+    text-align: center;
+    }
+
+  .headerText{
+    width: 70vw;
+    margin-left: 50px;
+  }
+
   form select {
     font-size: .8rem;
+  }
+}
+
+@media(max-width: 320px){
+
+  .headerText{
+    margin-top: 20px
+  }
+
+  .bookButton{
+    font-size: 0.9rem;
   }
 }
 
@@ -756,4 +796,3 @@ h2 {
 
 }
 
-}
